@@ -14,7 +14,5 @@ pydantic-settings
 python-dateutil
 python-dotenv
 python-jose
-pywin32
 PyYAML
 SQLAlchemy
-# uvicorn
