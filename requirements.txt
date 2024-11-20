@@ -22,6 +22,7 @@ h11
 httpcore
 httptools
 httpx
+hypercorn
 idna
 ipykernel
 ipython
@@ -67,7 +68,6 @@ tornado
 traitlets
 typer
 typing_extensions
-uvicorn
 watchfiles
 wcwidth
 websockets
