@@ -80,6 +80,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
+    environment:
+      name: production
     steps:
-      - name: deploying stuff
-        run: echo "going to deploy some stuff"
+      - name: deploying to Railway
+        uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          service: ${{ secrets.RAILWAY_SERVICE }}
+      
+      # pull our github repo
+      # install heroku cli
+      # heroku login
+      # add git remote for heroku
+      # git push heroku main
