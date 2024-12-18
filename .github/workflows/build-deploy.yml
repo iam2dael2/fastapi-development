@@ -83,14 +83,11 @@ jobs:
     environment:
       name: production
     steps:
+      - name: pulling git repo
+        uses: actions/checkout@v4
+        
       - name: deploying to Railway
         uses: bervProject/railway-deploy@main
         with:
           railway_token: ${{ secrets.RAILWAY_TOKEN }}
           service: ${{ secrets.RAILWAY_SERVICE }}
-      
-      # pull our github repo
-      # install heroku cli
-      # heroku login
-      # add git remote for heroku
-      # git push heroku main
