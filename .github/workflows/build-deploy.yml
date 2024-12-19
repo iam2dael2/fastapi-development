@@ -91,3 +91,14 @@ jobs:
         with:
           railway_token: ${{ secrets.RAILWAY_TOKEN }}
           service: ${{ secrets.RAILWAY_SERVICE }}
+
+      - name: deploy to Ubuntu Server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          password: ${{ secrets.PROD_PASSWORD }}
+          script: |
+            cd app/src
+            git pull
+            sudo systemctl restart api
